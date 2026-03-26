@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(venv/bin/python -c \"from langchain.agents import create_agent; help\\(create_agent\\)\")",
+      "Bash(venv/bin/python -c \"from langchain.agents import AgentMiddleware; help\\(AgentMiddleware\\)\")",
+      "Bash(venv/bin/python -c \"import inspect; from langchain.agents import create_agent; from langchain.agents.factory import AgentMiddleware; print\\(inspect.getsource\\(AgentMiddleware\\)\\)\")",
+      "Bash(venv/bin/python -c \"import inspect; from langchain.agents.factory import AgentMiddleware; methods = [m for m in dir\\(AgentMiddleware\\) if not m.startswith\\(''__''\\)]; print\\(methods\\)\")",
+      "Bash(venv/bin/python -c \"from langchain.agents.factory import AgentMiddleware; print\\(AgentMiddleware.__module__\\)\")",
+      "Bash(venv/bin/python -c \"import langchain.agents; print\\([x for x in dir\\(langchain.agents\\) if ''iddleware'' in x or ''agent'' in x.lower\\(\\)]\\)\")",
+      "Bash(venv/bin/python -c \"import langchain.agents.middleware as m; print\\(dir\\(m\\)\\)\")",
+      "Bash(venv/bin/python -c \"from langchain.agents.middleware import SummarizationMiddleware; help\\(SummarizationMiddleware.__init__\\)\")",
+      "Bash(python3 -c \"import langchain_openai; print\\(''ok''\\)\")",
+      "Bash(python3 -c \"import anthropic; print\\(''ok''\\)\")",
+      "Bash(find . -name *.py -path */langchain/agents*)"
+    ]
+  }
+}

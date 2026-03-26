@@ -27,6 +27,9 @@ AIdevs/
 | s02e04  | Mail API Agent               | LangChain agent interacting with a zmail API (help, list, get, search, decode_attachment); searches inbox for attack date, password, and SEC- confirmation code (or a hidden flag in ZIP attachments), then submits answer to hub |
 | s02e05  | Drone Flight Instructions    | LangChain agent with tools to inspect drone documentation and a map, then submit a list of flight instructions to the hub; must navigate safely to a target while accounting for obstacles |
 | s03e01  | Sensor Anomaly Detection     | Non-agentic pipeline: fetch sensor ZIP from hub, validate readings against per-type ranges, classify operator notes via OpenAI (parallel, with cache), union rule-based and NLP-flagged sensor IDs, POST recheck list to hub |
+| s03e02  | Remote Shell Agent           | LangChain agent with `run_command` tool executing commands on a remote Linux VM; navigates a read-only filesystem, runs firmware binary at `/opt/firmware/cooler/cooler.bin`, extracts ECCS code, submits to hub; uses medium reasoning effort (gpt-5.4) |
+| s03e03  | Reactor Robot Navigator      | LangChain agent with `SummarizationMiddleware` (triggers at 30% context) navigating a transport robot past moving reactor blocks via single-command API (start/reset/left/wait/right); fetches map then drives to goal |
+| s03e04  | Negotiations Lookup Service  | FastAPI server exposing `/api/lookup-data`; LangChain agent reads CSV memory files via `read_memory` (keyword search) to answer natural-language item/city queries; registers tool URL with hub and polls for flag. Note: memory-based approach is slower but more universal — could instead hardcode `search_item` and map items to cities programmatically |
 
 ## Setup Convention
 
