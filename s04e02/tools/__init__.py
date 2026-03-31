@@ -1,0 +1,4 @@
+from tools.fetch_documentation import windpower_fetch_documentation
+from tools.generate_signed_config import windpower_generate_signed_config
+
+TOOLS = [windpower_fetch_documentation, windpower_generate_signed_config]
